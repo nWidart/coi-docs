@@ -11,12 +11,13 @@ title: Attributes
 
 ### Attributes
 
-```csharp
-bool invokeOnMainThread = false
-bool invokeDuringSync = false
-string documentation = null
-string customCommandName = null
-```
+| type | name | required | default value |
+| --- | --- | --- | --- |
+| `bool` | `invokeOnMainThread` | no | `false` |
+| `bool` | `invokeDuringSync` | no | `false` |
+| `string` | `documentation` | no | `null` |
+| `string` | `customCommandName` | no | `null` |
+
 ### Example
 
 ```csharp
@@ -39,14 +40,15 @@ We also give it a custom name, which is what is called in the console.
 
 ### Attributes
 
-```csharp
-KbCategory category
-string id
-string label
-string tooltip = null
-bool ignoreConflicts = false
-bool isPrimaryReadonly = false
-```
+| type | name | required | default value |
+| --- | --- | --- | --- |
+| `KbCategory` | `category` | yes | — |
+| `string` | `id` | yes | — |
+| `string` | `label` | yes | — |
+| `string` | `tooltip` | no | `null` |
+| `bool` | `ignoreConflicts` | no | `false` |
+| `bool` | `isPrimaryReadonly` | no | `false` |
+
 
 ### Example
 
