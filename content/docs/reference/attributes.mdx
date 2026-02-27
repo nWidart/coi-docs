@@ -1,0 +1,26 @@
+---
+title: Attributes
+---
+
+## ConsoleCommand
+
+### Syntax
+```csharp
+[ConsoleCommand()]
+```
+
+### Attributes
+
+```csharp
+bool invokeOnMainThread = false
+bool invokeDuringSync = false
+string documentation = null
+string customCommandName = null
+```
+### Example
+
+```csharp
+[ConsoleCommand(true, false, null, "hello_world")]
+```
+This will register a command that will run on the main thread and not during a sync.
+We also give it a custom name, which is what is called in the console.
