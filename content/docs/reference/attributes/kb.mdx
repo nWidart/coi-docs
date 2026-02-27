@@ -1,37 +1,6 @@
 ---
-title: Attributes
+title: Kb
 ---
-
-## ConsoleCommand
-
-### Syntax
-```csharp
-[ConsoleCommand()]
-```
-
-### Attributes
-
-| type | name | required | default value |
-| --- | --- | --- | --- |
-| `bool` | `invokeOnMainThread` | no | `false` |
-| `bool` | `invokeDuringSync` | no | `false` |
-| `string` | `documentation` | no | `null` |
-| `string` | `customCommandName` | no | `null` |
-
-### Example
-
-```csharp
-[ConsoleCommand(true, false, null, "hello_world")]
-GameCommandResult HelloWorld()
-{
-    return GameCommandResult.Success;
-}
-```
-This will register a command that will run on the main thread and not during a sync.
-We also give it a custom name, which is what is called in the console.
-
-##  Kb
-
 ### Syntax
 
 ```csharp
