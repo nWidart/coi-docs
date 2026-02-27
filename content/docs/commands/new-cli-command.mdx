@@ -1,0 +1,28 @@
+---
+title: New CLI Command
+---
+
+## 1. Create a new class for your command
+
+```csharp
+[GlobalDependency(RegistrationMode.AsSelf)]
+public class MyFirstCommand
+{
+}
+```
+
+## 2. Create and register your command
+
+Create a new method to define your command.
+
+```csharp
+    [ConsoleCommand(true, false, null, "hello_world")]
+    GameCommandResult helloWorld()
+    {
+        return GameCommandResult.Success("Hello World!");
+    }
+```
+
+Since our class is registered as a global dependency (`[GlobalDependency(RegistrationMode.AsSelf)]`), we can launch the game and run our command.
+
+Open the console and type `hello_world`.
