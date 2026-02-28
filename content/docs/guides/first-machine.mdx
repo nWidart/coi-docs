@@ -10,7 +10,7 @@ description: How to create and register new machines
 Create a new class that implements `IModData` and register your machine data in the `RegisterData` method.
 The injected `ProtoRegistrator` is used to register new machine and recipe data.
 
-```csharp
+```csharp title="ExampleMachineData.cs"
 using Mafi;
 using Mafi.Base;
 using Mafi.Core.Entities.Animations;
@@ -61,7 +61,7 @@ internal class ExampleMachineData : IModData {
 ## 2. Define a unique machine ID
 Create a new `partial` class that will contain all your machine IDs.
 
-```csharp
+```csharp title="ExampleModIds.cs"
 using Mafi.Base;
 using MachineID = Mafi.Core.Factory.Machines.MachineProto.ID;
 
@@ -69,11 +69,11 @@ namespace ExampleMod;
 
 public partial class ExampleModIds
 {
-
-public partial class Machines
-{
-		public static readonly MachineID ExampleFurnace = Ids.Machines.CreateId("ExampleFurnace");
-	}
+  public partial class Machines
+  {
+      public static readonly MachineID ExampleFurnace = Ids.Machines.CreateId("ExampleFurnace");
+    }
+  }
 }
 ```
 
