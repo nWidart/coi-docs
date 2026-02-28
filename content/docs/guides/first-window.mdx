@@ -11,7 +11,7 @@ Here we are also creating the controller class for our window. This is where we 
 [GlobalDependency(RegistrationMode.AsEverything)]
 public class MyFirstWindow : Window
 {
-    public MyFirstWindow()
+    public MyFirstWindow() : base(new LocStrFormatted("Test Window"), true)
     {
     }
 
@@ -56,16 +56,19 @@ controllerContext.InputManager
                 .RegisterGlobalShortcut(_ => ShortcutsMap.Instance.OpenTrainsWindow, this);
 ```
 
-## 2. Customize the window
+<MyCallout type="info" title={'Tip!'}>If you're curious you could already go in game and test your window.</MyCallout>
 
-Let's give our window a title and a size. In the constructor of our Window class:
+![My first window](/images/FirstWindow_TestWindow.png)
+
+## 2.2 Customize the window
+
+Let's give our window a size. In the constructor of our Window class:
 
 ```csharp
 
-    public MyFirstWindow()
+    public MyFirstWindow() : base(new LocStrFormatted("Test Window"), true)
     {
         WindowSize(1000.px(), 900.px());
-        Title(new LocStrFormatted("My first window"));
     }
 ```
 
@@ -75,3 +78,7 @@ We will learn about a lot of customizations in a different chapter.
 
 You can now go in game and press the shortcut to open the window.
 The window will only have a title and an empty body for now.
+
+Here is how it looks:
+
+![FirstWindow_WindowSize](/images/FirstWindow_WithSize.png)

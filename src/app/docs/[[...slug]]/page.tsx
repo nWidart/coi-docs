@@ -6,6 +6,7 @@ import type { Metadata } from 'next';
 import { createRelativeLink } from 'fumadocs-ui/mdx';
 import {EditOnGithub} from "@/components/mdx/EditOnGithub";
 import {Separator} from "@/components/mdx/Separator";
+import {MyCallout} from "@/components/mdx/MyCallout";
 
 export default async function Page(props: PageProps<'/docs/[[...slug]]'>) {
   const params = await props.params;
@@ -30,6 +31,7 @@ export default async function Page(props: PageProps<'/docs/[[...slug]]'>) {
           components={getMDXComponents({
             // this allows you to link to other pages with relative file paths
             a: createRelativeLink(source, page),
+            MyCallout,
           })}
         />
         <Separator/>
