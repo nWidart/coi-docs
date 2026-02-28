@@ -6,6 +6,8 @@ import type { Metadata } from 'next';
 import { createRelativeLink } from 'fumadocs-ui/mdx';
 import { LLMCopyButton, ViewOptions } from '@/components/ai/page-actions';
 import { gitConfig } from '@/lib/layout.shared';
+import {EditOnGithub} from "@/components/mdx/EditOnGithub";
+import {Separator} from "@/components/mdx/Separator";
 
 export default async function Page(props: PageProps<'/docs/[[...slug]]'>) {
   const params = await props.params;
@@ -15,10 +17,16 @@ export default async function Page(props: PageProps<'/docs/[[...slug]]'>) {
   const MDX = page.data.body;
 
   return (
-    <DocsPage toc={page.data.toc} full={page.data.full}>
+    <DocsPage
+        toc={page.data.toc}
+        full={page.data.full}
+        tableOfContent={{
+          style: "clerk",
+        }}
+    >
       <DocsTitle>{page.data.title}</DocsTitle>
       <DocsDescription className="mb-0">{page.data.description}</DocsDescription>
-      <div className="my-6 h-px w-full bg-gradient-to-r from-transparent via-zinc-200 to-transparent dark:via-zinc-800" />
+      <Separator/>
       <DocsBody>
         <MDX
           components={getMDXComponents({
@@ -26,6 +34,8 @@ export default async function Page(props: PageProps<'/docs/[[...slug]]'>) {
             a: createRelativeLink(source, page),
           })}
         />
+        <Separator/>
+        <EditOnGithub pagePath={page.path} />
       </DocsBody>
     </DocsPage>
   );
