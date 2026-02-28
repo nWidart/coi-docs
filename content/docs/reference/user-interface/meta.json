@@ -2,6 +2,7 @@
   "title": "User Interface",
   "pages": [
     "interface",
-    "form-elements"
+    "form-elements",
+    "uicomponent"
   ]
 }
